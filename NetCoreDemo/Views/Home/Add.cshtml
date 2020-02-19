@@ -1,0 +1,21 @@
+﻿@model NetCoreDemo.Models.Cinema
+
+    <div class="container">
+        <form asp-action="Add">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input type="text" class="form-control" asp-for="Name" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Location"></label>
+                <input type="text" class="form-control" asp-for="Location" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity"></label>
+                <input type="number" class="form-control" asp-for="Capacity" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        @await Component.InvokeAsync("MovieCount", new { cinemaId = 2 });
+        <vc:movie-count cinema-id="2"></vc:movie-count>
+    </div>
